@@ -1,72 +1,86 @@
-import React, { useState } from 'react';
-import { shirts, sweatshirts, sweatpants, accessories } from '../images/ProductImages';
+import React from 'react';
+import Products from '../images/ProductImages';
+import createMenu from './Catalog_components/CatalogMenu';
+import { makeEmptyStr, capitalize } from './HelperFunctions';
 
 const Catalog = () => {
-
-    const createUI = (array) => {
+    const createImages = (array) => {
         return array.map((item, index) => {
             return (
-                <img className='products' src={item} alt='' />
+                <img className='images' src={item} alt='' />
             );
         });
     };
 
-    const makeEmptyStr = (num) => {
-        let str = '';
-        for (let i = 0; i < num; i++) {
-            str += '\xa0';
+    const createCatalog = () => {
+        let catalog = [];
+        for (let key in Products) {
+            const capKey = capitalize(key);
+            const arr = [...Products[key]];
+            catalog.push(
+                <div className='product'>
+                    <div className='labels'>
+                        <label>{capKey}</label>
+                        <label className='underline'>{makeEmptyStr(50)}</label>
+                    </div>
+                    <div>
+                        {createImages(arr)}
+                    </div>
+                </div>
+            );
         }
-        console.log(str);
-        return str;
+        return catalog.map((item, index) => {
+            return item;
+        });
     }
 
     return (
         <div className='catalog'>
-            <ul className='catalogmenu'>
-                <li>Shop All</li>
-                <li>T-shirts</li>
-                <li>Sweatshirts</li>
-            </ul>
+            {createMenu()}
             <div className='shopContainer'>
-                <div className='shirts'>
-                    <div className='labels'>
-                        <label>Shirts</label>
-                        <label className='underline'>{makeEmptyStr(50)}</label>
-                    </div>
-                    <div className='shirtgrid'>
-                        {createUI(shirts)}
-                    </div>
-                </div>
-                <div className='shirts'>
-                    <div className='labels'>
-                        <label>Sweatshirts</label>
-                        <label className='underline'>{makeEmptyStr(50)}</label>
-                    </div>
-                    <div className='shirtgrid'>
-                        {createUI(sweatshirts)}
-                    </div>
-                </div>
-                <div className='shirts'>
-                    <div className='labels'>
-                        <label>Sweatpants</label>
-                        <label className='underline'>{makeEmptyStr(50)}</label>
-                    </div>
-                    <div className='shirtgrid'>
-                        {createUI(sweatpants)}
-                    </div>
-                </div>
-                <div className='shirts'>
-                    <div className='labels'>
-                        <label>Accessories</label>
-                        <label className='underline'>{makeEmptyStr(50)}</label>
-                    </div>
-                    <div className='shirtgrid'>
-                        {createUI(accessories)}
-                    </div>
-                </div>
+                {createCatalog()}
             </div>
         </div>
     );
 };
+
+export { createMenu };
+
+//  <div className='product'>
+//                     <div className='labels'>
+//                         <label>Shirts</label>
+//                         <label className='underline'>{makeEmptyStr(50)}</label>
+//                     </div>
+//                     <div className='prodImgs'>
+//                         {createUI(shirts)}
+//                     </div>
+//                 </div>
+//                 <div className='product'>
+//                     <div className='labels'>
+//                         <label>Sweatshirts</label>
+//                         <label className='underline'>{makeEmptyStr(50)}</label>
+//                     </div>
+//                     <div className='prodImgs'>
+//                         {createUI(sweatshirts)}
+//                     </div>
+//                 </div>
+//                 <div className='product'>
+//                     <div className='labels'>
+//                         <label>Sweatpants</label>
+//                         <label className='underline'>{makeEmptyStr(50)}</label>
+//                     </div>
+//                     <div className='prodImgs'>
+//                         {createUI(sweatpants)}
+//                     </div>
+//                 </div>
+//                 <div className='product'>
+//                     <div className='labels'>
+//                         <label>Accessories</label>
+//                         <label className='underline'>{makeEmptyStr(50)}</label>
+//                     </div>
+//                     <div className='prodImgs'>
+//                         {createUI(accessories)}
+//                     </div>
+//                 </div>
 
 export default Catalog;

@@ -31,4 +31,11 @@ const accessories = [
     NavyHat,
 ];
 
-export { shirts, sweatshirts, sweatpants, accessories };
+const products = {
+    shirts,
+    sweatshirts,
+    sweatpants,
+    accessories
+}
+
+export default products;

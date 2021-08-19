@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+html.body {
+    font-family: 'Roboto', sans-serif;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -38,49 +42,51 @@ nav {
 } */
 
 a:visited{
-  color: white;
+  color: black;
 }
 
 a:link{
     color: white;
 }
 
-.products {
-    width: 300px;
-    height: 300px;
+a:hover{
+    cursor: pointer;
 }
+
+
+
 
 .shopContainer{
 
 }
 
 .catalogmenu{
-    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif !important;
+    border-right: 1px solid black;
+    background-image: linear-gradient(rgb(230, 230, 250), rgba(255,255,255));
     list-style: none;
+    text-decoration: underline;
     min-height: 100%;
-    width: 200px;
+    min-width: 15vw;
+}
+
+.catalogtitle{
+    margin-top: 5rem;
+    width: max-content;
+    color: black;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.catalogmenu li{
+    margin-top: 0.5rem;
+    width: max-content;
 }
 
 .catalog{
     display: flex;
-}
-
-label { 
-    display: flex;
-    font-family: 'Roboto', sans-serif;
-    font-size: 40px; 
-    
-}
-
-.labels {
-    display: flex;
-    flex-direction: column;
-    background-color: pink;
-    max-width: 50%;
-}
-
-label.underline{
-    text-decoration: overline;
 }
 
 .shopContainer {
@@ -89,15 +95,25 @@ label.underline{
     justify-content: center;
 }
 
-.shirts{
+.labels {
+    display: flex;
+    color: rgb(16, 45, 70);
+    flex-direction: column;
+    font-size: 40px; 
+}
+
+label.underline{
+    text-decoration: overline;
+}
+
+.product{
     margin-left: 5%;
     margin-top: 5%;
 }
 
-.shirtgrid{
-    display: flex !important;
-    flex-direction: row;
-    flex-wrap: wrap;
+.images {
+    width: 300px;
+    height: 300px;
 }
 
 html, body {
@@ -118,6 +134,5 @@ html, body {
 .footer {
   background-color: white;
   opacity: 0.5;
-  height: 142px;
   text-align: center;
 }
