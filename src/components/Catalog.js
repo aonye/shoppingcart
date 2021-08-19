@@ -1,9 +1,7 @@
-import Products from '../images/ProductImages';
 import React, { useState } from 'react';
+import { shirts, sweatshirts, sweatpants, accessories } from '../images/ProductImages';
 
 const Catalog = () => {
-    const [ChampGraySP, ChampNavySP, GrayPO, JordanLS, MaizeFBSS, NavyHat, NavyFBSS, NavyPOBasic, NikeMaizeShirt, WhitePOBasic] = Products;
-    console.log(ChampGraySP, ChampNavySP, GrayPO, JordanLS, MaizeFBSS, NavyHat, NavyFBSS, NavyPOBasic, NikeMaizeShirt, WhitePOBasic);
 
     const createUI = (array) => {
         return array.map((item, index) => {
@@ -13,6 +11,15 @@ const Catalog = () => {
         });
     };
 
+    const makeEmptyStr = (num) => {
+        let str = '';
+        for (let i = 0; i < num; i++) {
+            str += '\xa0';
+        }
+        console.log(str);
+        return str;
+    }
+
     return (
         <div className='catalog'>
             <ul className='catalogmenu'>
@@ -21,21 +28,41 @@ const Catalog = () => {
                 <li>Sweatshirts</li>
             </ul>
             <div className='shopContainer'>
-                <div>Shirts</div>
                 <div className='shirts'>
-                    {createUI(Products)}
+                    <div className='labels'>
+                        <label>Shirts</label>
+                        <label className='underline'>{makeEmptyStr(50)}</label>
+                    </div>
+                    <div className='shirtgrid'>
+                        {createUI(shirts)}
+                    </div>
                 </div>
-                <div>Sweatshirts</div>
-                <div className='sweatshirts'>
-                    {createUI(Products)}
+                <div className='shirts'>
+                    <div className='labels'>
+                        <label>Sweatshirts</label>
+                        <label className='underline'>{makeEmptyStr(50)}</label>
+                    </div>
+                    <div className='shirtgrid'>
+                        {createUI(sweatshirts)}
+                    </div>
                 </div>
-                <div>Sweatpants</div>
-                <div className='sweatpants'>
-                    {createUI(Products)}
+                <div className='shirts'>
+                    <div className='labels'>
+                        <label>Sweatpants</label>
+                        <label className='underline'>{makeEmptyStr(50)}</label>
+                    </div>
+                    <div className='shirtgrid'>
+                        {createUI(sweatpants)}
+                    </div>
                 </div>
-                <div>Accessories</div>
-                <div className='accessories'>
-                    {createUI(Products)}
+                <div className='shirts'>
+                    <div className='labels'>
+                        <label>Accessories</label>
+                        <label className='underline'>{makeEmptyStr(50)}</label>
+                    </div>
+                    <div className='shirtgrid'>
+                        {createUI(accessories)}
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,3 +1,5 @@
+@import url(Fonts.css);
+
 * {
   margin: 0;
 }
@@ -63,34 +65,39 @@ a:link{
     display: flex;
 }
 
+label { 
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px; 
+    
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    max-width: 50%;
+}
+
+label.underline{
+    text-decoration: overline;
+}
+
 .shopContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .shirts{
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    margin-left: 35%;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
-.sweatshirts{
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-
-.sweatpants{
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-
-.accessories{
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+.shirtgrid{
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 html, body {
@@ -104,7 +111,6 @@ html, body {
 }
 
 .wrapper:after {
-  display: block;
   content: "";
   height: 142px;
 }

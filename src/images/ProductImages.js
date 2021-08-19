@@ -9,17 +9,26 @@ import NavyPOBasic from './products/navy-pullover-basic.jpeg';
 import NikeMaizeShirt from './products/nike-maize-shirt.jpeg';
 import WhitePOBasic from './products/white-pullover-basic.jpeg';
 
-const Products = [
-    ChampGraySP,
-    ChampNavySP,
-    GrayPO,
+const shirts = [
+    NikeMaizeShirt,
     JordanLS,
+];
+
+const sweatshirts = [
     MaizeFBSS,
-    NavyHat,
     NavyFBSS,
     NavyPOBasic,
-    NikeMaizeShirt,
     WhitePOBasic,
+    GrayPO,
+];
+
+const sweatpants = [
+    ChampGraySP,
+    ChampNavySP,
 ]
 
-export default Products;
+const accessories = [
+    NavyHat,
+];
+
+export { shirts, sweatshirts, sweatpants, accessories };
