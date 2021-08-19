@@ -3,7 +3,6 @@ const makeEmptyStr = (num) => {
     for (let i = 0; i < num; i++) {
         str += '\xa0';
     }
-    console.log(str);
     return str;
 }
 

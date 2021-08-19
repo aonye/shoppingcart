@@ -17,9 +17,6 @@ const shirts = [
 const sweatshirts = [
     MaizeFBSS,
     NavyFBSS,
-    NavyPOBasic,
-    WhitePOBasic,
-    GrayPO,
 ];
 
 const sweatpants = [
