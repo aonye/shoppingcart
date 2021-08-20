@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shoppingcart/static/css/main.b1e357d4.chunk.css",
-    "main.js": "/shoppingcart/static/js/main.ccf70473.chunk.js",
-    "main.js.map": "/shoppingcart/static/js/main.ccf70473.chunk.js.map",
+    "main.css": "/shoppingcart/static/css/main.724da547.chunk.css",
+    "main.js": "/shoppingcart/static/js/main.de08653d.chunk.js",
+    "main.js.map": "/shoppingcart/static/js/main.de08653d.chunk.js.map",
     "runtime-main.js": "/shoppingcart/static/js/runtime-main.69c278c5.js",
     "runtime-main.js.map": "/shoppingcart/static/js/runtime-main.69c278c5.js.map",
     "static/js/2.5191a043.chunk.js": "/shoppingcart/static/js/2.5191a043.chunk.js",
     "static/js/2.5191a043.chunk.js.map": "/shoppingcart/static/js/2.5191a043.chunk.js.map",
     "index.html": "/shoppingcart/index.html",
-    "static/css/main.b1e357d4.chunk.css.map": "/shoppingcart/static/css/main.b1e357d4.chunk.css.map",
+    "static/css/main.724da547.chunk.css.map": "/shoppingcart/static/css/main.724da547.chunk.css.map",
     "static/js/2.5191a043.chunk.js.LICENSE.txt": "/shoppingcart/static/js/2.5191a043.chunk.js.LICENSE.txt",
     "static/media/cart-final.befe355a.jpg": "/shoppingcart/static/media/cart-final.befe355a.jpg",
     "static/media/champion-gray-sweatpants.fb22682d.jpeg": "/shoppingcart/static/media/champion-gray-sweatpants.fb22682d.jpeg",
@@ -17,18 +17,18 @@
     "static/media/gray-pullover.16633311.jpeg": "/shoppingcart/static/media/gray-pullover.16633311.jpeg",
     "static/media/jordan-bball-longsleeve.f99d8c23.jpeg": "/shoppingcart/static/media/jordan-bball-longsleeve.f99d8c23.jpeg",
     "static/media/maize-football-sweatshirt.0f01d67c.jpeg": "/shoppingcart/static/media/maize-football-sweatshirt.0f01d67c.jpeg",
+    "static/media/michigan_stadium.4dfa092f.jpg": "/shoppingcart/static/media/michigan_stadium.4dfa092f.jpg",
     "static/media/navy-flex-hat.2573eff0.jpeg": "/shoppingcart/static/media/navy-flex-hat.2573eff0.jpeg",
     "static/media/navy-football-sweatshirt.999d12d2.jpeg": "/shoppingcart/static/media/navy-football-sweatshirt.999d12d2.jpeg",
     "static/media/navy-pullover-basic.c1a2661f.jpeg": "/shoppingcart/static/media/navy-pullover-basic.c1a2661f.jpeg",
     "static/media/nike-maize-shirt.6663e595.jpeg": "/shoppingcart/static/media/nike-maize-shirt.6663e595.jpeg",
     "static/media/scarf.bc533f90.jpeg": "/shoppingcart/static/media/scarf.bc533f90.jpeg",
-    "static/media/stadium.e918a694.jpg": "/shoppingcart/static/media/stadium.e918a694.jpg",
     "static/media/white-pullover-basic.df7a199c.jpeg": "/shoppingcart/static/media/white-pullover-basic.df7a199c.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.69c278c5.js",
     "static/js/2.5191a043.chunk.js",
-    "static/css/main.b1e357d4.chunk.css",
-    "static/js/main.ccf70473.chunk.js"
+    "static/css/main.724da547.chunk.css",
+    "static/js/main.de08653d.chunk.js"
   ]
 }
