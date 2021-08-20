@@ -4,6 +4,7 @@ import GrayPO from './products/gray-pullover.jpeg';
 import JordanLS from './products/jordan-bball-longsleeve.jpeg';
 import MaizeFBSS from './products/maize-football-sweatshirt.jpeg';
 import NavyHat from './products/navy-flex-hat.jpeg';
+import Scarf from './products/scarf.jpeg';
 import NavyFBSS from './products/navy-football-sweatshirt.jpeg';
 import NavyPOBasic from './products/navy-pullover-basic.jpeg';
 import NikeMaizeShirt from './products/nike-maize-shirt.jpeg';
@@ -17,6 +18,9 @@ const shirts = [
 const sweatshirts = [
     MaizeFBSS,
     NavyFBSS,
+    NavyPOBasic,
+    WhitePOBasic,
+    GrayPO,
 ];
 
 const sweatpants = [
@@ -26,6 +30,7 @@ const sweatpants = [
 
 const accessories = [
     NavyHat,
+    Scarf,
 ];
 
 const products = {

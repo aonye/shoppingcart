@@ -11,7 +11,7 @@ const createCatalog = (Obj) => {
                     <label>{capKey}</label>
                     <label className='underline'>{makeEmptyStr(50)}</label>
                 </div>
-                <div>
+                <div className='imageContainer'>
                     {createImages(arr)}
                 </div>
             </div >
