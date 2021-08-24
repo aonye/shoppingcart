@@ -1,10 +1,11 @@
-import stadium from '../images/background/stadium.jpg';
+import stadium from '../images/background/michigan_stadium.jpg';
+import { Link } from 'react-router-dom';
 
 const App = () => {
   return (
     <div id='homepage'>
-      <div id='hometitle'>Welcome to MLodge!</div>
-      <img id='stadium' src={stadium} alt='michstad' width='900' height='600' />
+      <div id='hometitle'>Welcome to MLodge! GOOO BLUE!</div>
+      <Link to='/catalog'><img id='stadium' src={stadium} alt='michstad' width='900' height='600' /></Link>
     </div >
   );
 };
