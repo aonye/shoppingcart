@@ -1,5 +1,5 @@
 import Nav from './Nav';
-import App from './App';
+import Home from './Home';
 import Catalog from './Catalog';
 import Shirts from './Catalog_components/Shirts';
 import Sweatshirts from './Catalog_components/Sweatshirts';
@@ -10,7 +10,7 @@ import Footer from './Footer';
 
 const Index = {
     Nav,
-    App,
+    Home,
     Catalog,
     About,
     Footer,

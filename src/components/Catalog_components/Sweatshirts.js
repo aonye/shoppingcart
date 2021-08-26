@@ -1,19 +1,21 @@
 import React from 'react';
-import products from '../../images/ProductImages';
+import { products } from '../../images/ProductImages';
 import createMenu from './CatalogMenu';
-import createCatalog from './CatalogItems';
+import createCatalog from './CreateCatalog';
+
+const sweatshirt = products.find((item) => item.id === 'Sweatshirts');
 
 const Sweatshirts = () => {
-    const { sweatshirts } = products;
-
     return (
         <div className='catalog'>
             {createMenu()}
             <div className='shopContainer'>
-                {createCatalog({ sweatshirts })}
+                {createCatalog([sweatshirt])}
             </div>
         </div>
-    ); //createCatalog takes an object
+    ); //createCatalog takes an arr
 };
 
 export default Sweatshirts;
+
+

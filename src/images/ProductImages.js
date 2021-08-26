@@ -11,33 +11,34 @@ import NikeMaizeShirt from './products/nike-maize-shirt.jpeg';
 import WhitePOBasic from './products/white-pullover-basic.jpeg';
 
 const shirts = [
-    NikeMaizeShirt,
-    JordanLS,
+    { id: 'NikeMaizeShirt', image: NikeMaizeShirt },
+    { id: 'JordanLS', image: JordanLS },
 ];
 
 const sweatshirts = [
-    MaizeFBSS,
-    NavyFBSS,
-    NavyPOBasic,
-    WhitePOBasic,
-    GrayPO,
+    { id: 'MaizeFBSS', image: MaizeFBSS },
+    { id: 'NavyFBSS', image: NavyFBSS },
+    { id: 'NavyPOBasic', image: NavyPOBasic },
+    { id: 'WhitePOBasic', image: WhitePOBasic },
+    { id: 'GrayPO', image: GrayPO },
+    { id: 'NikeMaizeShirt', image: NikeMaizeShirt },
 ];
 
 const sweatpants = [
-    ChampGraySP,
-    ChampNavySP,
-]
-
-const accessories = [
-    NavyHat,
-    Scarf,
+    { id: 'ChampGraySP', image: ChampGraySP },
+    { id: 'ChampNavySP', image: ChampNavySP },
 ];
 
-const products = {
-    shirts,
-    sweatshirts,
-    sweatpants,
-    accessories
-}
+const accessories = [
+    { id: 'NavyHat', image: NavyHat },
+    { id: 'Scarf', image: Scarf },
+];
 
-export default products;
+const products = [
+    { id: 'Shirts', imgArr: shirts },
+    { id: 'Sweatshirts', imgArr: sweatshirts },
+    { id: 'Sweatpants', imgArr: sweatpants },
+    { id: 'Accessories', imgArr: accessories },
+];
+
+export { products, shirts, sweatshirts, sweatpants, accessories };

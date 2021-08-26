@@ -1,19 +1,19 @@
 import React from 'react';
-import products from '../../images/ProductImages';
+import { products } from '../../images/ProductImages';
 import createMenu from './CatalogMenu';
-import createCatalog from './CatalogItems';
+import createCatalog from './CreateCatalog';
+
+const accessory = products.find((item) => item.id === 'Accessories');
 
 const Accessories = () => {
-    const { accessories } = products;
-
     return (
         <div className='catalog'>
             {createMenu()}
             <div className='shopContainer'>
-                {createCatalog({ accessories })}
+                {createCatalog([accessory])}
             </div>
         </div>
-    ); //createCatalog takes an object
+    ); //createCatalog takes an arr
 };
 
 export default Accessories;

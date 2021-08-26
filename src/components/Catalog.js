@@ -1,20 +1,72 @@
 import React from 'react';
-import products from '../images/ProductImages';
-import createMenu from './Catalog_components/CatalogMenu';
-import createCatalog from './Catalog_components/CatalogItems';
+import { Link, Route } from 'react-router-dom';
+import { products } from '../images/ProductImages';
+import createCatalog from './Catalog_components/CreateCatalog';
+import Index from './Index';
+import Shirts from './Catalog_components/Shirts';
 
-const Catalog = () => {
-    return (
-        <div className='catalog'>
-            {createMenu()}
-            <div className='shopContainer'>
-                {createCatalog(products)}
-            </div>
+const Catalog = ({ match }) => (
+    // const ProductPage = [
+    //     { id: 'Shirts', Shirts },
+    //     { id: 'Sweatshirts', Sweatshirts },
+    //     { id: 'Sweatpants', Sweatpants },
+    //     { id: 'Accessories', Accessories },
+    //     { id: '', Products },
+    // ];
+    // let path = ProductPage.find((item) => {
+    //     return `/catalog/${item.id.toLowerCase()}` === match.url;
+    // });
+    // if (!path) {
+    //     path = Products;
+    // }
+    // console.log(path);
+
+    // const Topics = ({ match }) => (
+    //     <div>
+    //         <h2>Topics</h2>
+    //         <Link to={`${match.url}/exampleTopicId`}>
+    //             Example topic
+    //         </Link>
+    //         <Route path={`${match.path}/:topicId`} component={Topic} />
+    //     </div>
+    // )
+    <div className='catalog'>
+        <ul className='catalogmenu'>
+            <Link className='catalogtitle' to={`${match.path}`}><div>Shop All</div></Link>
+            <Link to={`${match.path}shirts`}> <li>Shirts</li></Link>
+            <Link to={`${match.path}sweatshirts`}><li>Sweatshirts</li></Link>
+            <Link to={`${match.path}sweatpants`}><li>Sweatpants</li></Link>
+            <Link to={`${match.path}accessories`}> <li>Accessories</li></Link>
+        </ul>
+        <div className='shopContainer'>
+            {createCatalog(products)}
         </div>
-    );
-};
+    </div>
+);
 
 export default Catalog;
+
+{/*  */ }
+
+/*  */
+
+//{createCatalog(products)}
+
+/* <div className='catalog'>
+    {createMenu()}
+    <div className='shopContainer'>
+        {createCatalog(products)}
+    </div>
+</div> */
+
+//Menu: 
+/* <ul className='catalogmenu'>
+    <Link className='catalogtitle' to='/catalog'><div>Shop All</div></Link>
+    <Link to='catalog/shirts'><li>Shirts</li></Link>
+    <Link to='catalog/sweatshirts'><li>Sweatshirts</li></Link>
+    <Link to='catalog/sweatpants'><li>Sweatpants</li></Link>
+    <Link to='catalog/accessories'> <li>Accessories</li></Link>
+</ul> */
 
 //  <div className='product'>
 //                     <div className='labels'>

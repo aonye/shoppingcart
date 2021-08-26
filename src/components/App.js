@@ -1,16 +1,87 @@
-import stadium from '../images/background/michigan_stadium.jpg';
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { products } from '../images/ProductImages';
+import { default as Components } from './Index';
+import { default as CatalogItems } from './Catalog_components/Catalog_items/index';
+import Shirt1 from './Catalog_components/Catalog_items/shirt1';
+import '../styles/Styles.css';
+
+// const [shirts, sweatshirts, sweatpants, accessories] = products;
+// const shirtIDs = shirts.imgArr.map((item) => item.id);
+// const sweatShirtIDs = sweatshirts.imgArr.map((item) => item.id);
+// const sweatPantIDs = sweatpants.imgArr.map((item) => item.id);
+// const accessoryIDs = accessories.imgArr.map((item) => item.id);
 
 const App = () => {
+  const { Nav, Footer, Home, About, Catalog, Shirts, Sweatshirts, Sweatpants, Accessories } = Components;
+  console.log(CatalogItems);
+
+  const createR = (arr, path) => {
+    return arr.map((element) => {
+      return (
+        <Route path={`${path}/${element.id}`} component={element.item} exact />
+      );
+    });
+  }
   return (
-    <div id='homepage'>
-      <div id='hometitle'>Welcome to MLodge! GOOO BLUE!</div>
-      <Link to='/catalog'><img id='stadium' src={stadium} alt='michstad' width='900' height='600' /></Link>
-    </div >
+    <BrowserRouter>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route
+          path="/catalog"
+          render={({ match: { path } }) => (
+            <>
+              <Route path={`${path}/`} component={Catalog} exact />
+              <Route
+                path={`${path}/shirts`}
+                render={({ match: { path } }) => (
+                  <>
+                    <Route path={`${path}/`} component={Shirts} exact />
+                    {createR(CatalogItems, path)}
+                  </>
+                )}
+              />
+              <Route path={`${path}/sweatshirts`} component={Sweatshirts} />
+              <Route path={`${path}/sweatpants`} component={Sweatpants} />
+              <Route path={`${path}/accessories`} component={Accessories} />
+            </>
+          )}
+        />
+      </Switch>
+      <Footer />
+    </BrowserRouter>
   );
 };
 
+
 export default App;
+// import { Switch, Route } from 'react-router-dom';
+// import './styles/Styles.css';
+// import Index from './components/Index';
+
+// const NotFound = () => <h1>Not Found</h1>;
+
+// const Layouts = () => {
+//   const {
+//     App,
+//     About,
+//     Catalog,
+//     Shirts,
+//     Sweatshirts,
+//     Sweatpants,
+//     Accessories,
+//   } = Index;
+//   return (
+//     <Switch>
+//       <Route exact path='/' component={App} />
+//       <Route exact path='/about' component={About} />
+//       <Route exact path='/catalog' component={Catalog} />
+//     </Switch>
+//   );
+// }
+
+// export default Layouts;
 
 
 //old image slider code written in pure JS

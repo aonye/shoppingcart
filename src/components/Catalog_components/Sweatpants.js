@@ -1,16 +1,16 @@
 import React from 'react';
-import products from '../../images/ProductImages';
+import { products } from '../../images/ProductImages';
 import createMenu from './CatalogMenu';
-import createCatalog from './CatalogItems';
+import createCatalog from './CreateCatalog';
 
-const Sweatpants = () => {
-    const { sweatpants } = products;
+const sweatpant = products.find((item) => item.id === 'Sweatpants');
 
+const Sweatpants = ({ match }) => {
     return (
         <div className='catalog'>
             {createMenu()}
             <div className='shopContainer'>
-                {createCatalog({ sweatpants })}
+                {createCatalog([sweatpant])}
             </div>
         </div>
     ); //createCatalog takes an object
