@@ -11,34 +11,34 @@ import NikeMaizeShirt from './products/nike-maize-shirt.jpeg';
 import WhitePOBasic from './products/white-pullover-basic.jpeg';
 
 const shirts = [
-    { id: 'NikeMaizeShirt', image: NikeMaizeShirt },
-    { id: 'JordanLS', image: JordanLS },
+    { id: 0, name: 'NikeMaizeShirt', image: NikeMaizeShirt },
+    { id: 1, name: 'JordanLS', image: JordanLS },
 ];
 
 const sweatshirts = [
-    { id: 'MaizeFBSS', image: MaizeFBSS },
-    { id: 'NavyFBSS', image: NavyFBSS },
-    { id: 'NavyPOBasic', image: NavyPOBasic },
-    { id: 'WhitePOBasic', image: WhitePOBasic },
-    { id: 'GrayPO', image: GrayPO },
-    { id: 'NikeMaizeShirt', image: NikeMaizeShirt },
+    { id: 0, name: 'MaizeFBSS', image: MaizeFBSS },
+    { id: 1, name: 'NavyFBSS', image: NavyFBSS },
+    { id: 2, name: 'NavyPOBasic', image: NavyPOBasic },
+    { id: 3, name: 'WhitePOBasic', image: WhitePOBasic },
+    { id: 4, name: 'GrayPO', image: GrayPO },
+    { id: 5, name: 'NikeMaizeShirt', image: NikeMaizeShirt },
 ];
 
 const sweatpants = [
-    { id: 'ChampGraySP', image: ChampGraySP },
-    { id: 'ChampNavySP', image: ChampNavySP },
+    { id: 0, name: 'ChampGraySP', image: ChampGraySP },
+    { id: 1, name: 'ChampNavySP', image: ChampNavySP },
 ];
 
 const accessories = [
-    { id: 'NavyHat', image: NavyHat },
-    { id: 'Scarf', image: Scarf },
+    { id: 0, name: 'NavyHat', image: NavyHat },
+    { id: 1, name: 'Scarf', image: Scarf },
 ];
 
-const products = [
-    { id: 'Shirts', imgArr: shirts },
-    { id: 'Sweatshirts', imgArr: sweatshirts },
-    { id: 'Sweatpants', imgArr: sweatpants },
-    { id: 'Accessories', imgArr: accessories },
-];
+const Products = [
+    { ProductType: 'Shirts', ProductInfo: shirts },
+    { ProductType: 'Sweatshirts', ProductInfo: sweatshirts },
+    { ProductType: 'Sweatpants', ProductInfo: sweatpants },
+    { ProductType: 'Accessories', ProductInfo: accessories },
+]
 
-export { products, shirts, sweatshirts, sweatpants, accessories };
+export { Products }; //all exports are objs in arr

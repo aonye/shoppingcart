@@ -108,6 +108,10 @@ img{
     margin-right: 0.5rem;
 } */
 
+a{
+    width: max-content;
+}
+
 a:visited{
   color: black;
 }
@@ -151,6 +155,7 @@ a:hover{
     font-size: 1vw;
     width: max-content;
 }
+
 
 .catalog{
     display: flex;

@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { products } from '../images/ProductImages';
+import { capitalize } from './HelperFunctions';
+import { Products } from '../images/ProductImages';
 import { default as Components } from './Index';
 import { default as CatalogItems } from './Catalog_components/Catalog_items/index';
-import Shirt1 from './Catalog_components/Catalog_items/shirt1';
+import Shirt0 from './Catalog_components/Catalog_items/Shirt0';
 import '../styles/Styles.css';
 
 // const [shirts, sweatshirts, sweatpants, accessories] = products;
@@ -13,14 +14,25 @@ import '../styles/Styles.css';
 
 const App = () => {
   const { Nav, Footer, Home, About, Catalog, Shirts, Sweatshirts, Sweatpants, Accessories } = Components;
-  console.log(CatalogItems);
 
-  const createR = (arr, path) => {
-    return arr.map((element) => {
+  const createR = (Products, path) => {
+    const regex = '(?<=\/catalog\/)[A-Za-z]+';
+    const [routeName] = path.match(regex);
+    const product = Products.find((item) => {
+      return item.ProductType === capitalize(routeName);
+    });
+    return product.ProductInfo.map((element) => {
+      console.log(`${path}/${element.id}`, createComponent(element.image));
       return (
-        <Route path={`${path}/${element.id}`} component={element.item} exact />
+        <Route key={element.id} path={`${path}/${element.id}`} render={() => createComponent(element.image, element.id)} exact />
       );
     });
+  }
+
+  const createComponent = (image, id) => {
+    return (
+      <img key={id} src={image} alt='' />
+    );
   }
   return (
     <BrowserRouter>
@@ -38,13 +50,37 @@ const App = () => {
                 render={({ match: { path } }) => (
                   <>
                     <Route path={`${path}/`} component={Shirts} exact />
-                    {createR(CatalogItems, path)}
+                    {createR(Products, path)}
                   </>
                 )}
               />
-              <Route path={`${path}/sweatshirts`} component={Sweatshirts} />
-              <Route path={`${path}/sweatpants`} component={Sweatpants} />
-              <Route path={`${path}/accessories`} component={Accessories} />
+              <Route
+                path={`${path}/sweatshirts`}
+                render={({ match: { path } }) => (
+                  <>
+                    <Route path={`${path}/`} component={Sweatshirts} exact />
+                    {createR(Products, path)}
+                  </>
+                )}
+              />
+              <Route
+                path={`${path}/sweatpants`}
+                render={({ match: { path } }) => (
+                  <>
+                    <Route path={`${path}/`} component={Sweatpants} exact />
+                    {createR(Products, path)}
+                  </>
+                )}
+              />
+              <Route
+                path={`${path}/accessories`}
+                render={({ match: { path } }) => (
+                  <>
+                    <Route path={`${path}/`} component={Accessories} exact />
+                    {createR(Products, path)}
+                  </>
+                )}
+              />
             </>
           )}
         />

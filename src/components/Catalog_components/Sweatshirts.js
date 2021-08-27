@@ -1,16 +1,16 @@
 import React from 'react';
-import { products } from '../../images/ProductImages';
+import { Products } from '../../images/ProductImages';
 import createMenu from './CatalogMenu';
 import createCatalog from './CreateCatalog';
 
-const sweatshirt = products.find((item) => item.id === 'Sweatshirts');
+const sweatshirtProd = [Products.find((item) => item.ProductType === 'Sweatshirts')];
 
-const Sweatshirts = () => {
+const Sweatshirts = ({ match }) => {
     return (
         <div className='catalog'>
             {createMenu()}
             <div className='shopContainer'>
-                {createCatalog([sweatshirt])}
+                {createCatalog(sweatshirtProd)}
             </div>
         </div>
     ); //createCatalog takes an arr

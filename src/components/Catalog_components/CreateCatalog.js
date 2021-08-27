@@ -1,30 +1,28 @@
-import { makeEmptyStr, capitalize } from '../HelperFunctions';
+import { makeEmptyStr } from '../HelperFunctions';
 import { Link } from 'react-router-dom';
 
 const createCatalog = (arr) => {
     return arr.map((item, index) => {
-        const itemType = item.id;
-        const imgArr = item.imgArr;
+        const prodType = item.ProductType;
+        const prodImgs = item.ProductInfo;
         return (
             <div key={index} className='product'>
                 <div className='labels'>
-                    <label>{itemType}</label>
+                    <label>{prodType}</label>
                     <label className='underline'>{makeEmptyStr(50)}</label>
                 </div>
                 <div className='imageContainer'>
-                    {createImages(itemType, imgArr)}
+                    {createImages(prodType.toLowerCase(), prodImgs)}
                 </div>
             </div >
         );
     });
 };
 
-const createImages = (itemType, array) => {
-    console.log(itemType);
-    const LCItemType = itemType.toLowerCase();
-    return array.map((item, index) => {
+const createImages = (prodType, array) => {
+    return array.map((item) => {
         return (
-            <Link key={index} to={`/catalog/${LCItemType}/${index}`}>
+            <Link key={item.id} to={`/catalog/${prodType}/${item.id}`}>
                 <img className='images' src={item.image} alt='' />
             </Link>
         );
