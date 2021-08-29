@@ -5,17 +5,17 @@ import Cart from '../images/icons/cart-final.jpg';
 const Nav = (props) => {
     return (
         <nav className='navbar'>
-            <Link to='/'>
+            <Link to='/shoppingcart'>
                 <div className='logoContainer'>
                     <img className='logoImg' src={MichiganLogo} alt='Michigan Logo' />
                     <div>Lodge</div>
                 </div>
             </Link>
             <ul className='navlinks'>
-                <Link to='/'><li>Home</li></Link>
-                <Link to='/catalog'><li>Shop</li></Link>
-                <Link to='/about'><li>About</li></Link>
-                <Link to='/shoppingcart'>
+                <Link to='/shoppingcart'><li>Home</li></Link>
+                <Link to='/shoppingcart/catalog'><li>Shop</li></Link>
+                <Link to='/shoppingcart/about'><li>About</li></Link>
+                <Link to='/shoppingcart/cart'>
                     <li className='cart'>
                         <img className='cartimg' src={Cart} alt='cart' />
                         {checkState(props.cart) ? <div className='reddot'></div> : null}

@@ -4,7 +4,7 @@ import { BrowserRouter as Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div id='homepage'>
-            <div id='hometitle'>Welcome to MLodge! GOOO BLUE!</div>
+            <div id='hometitle'>Welcome to MLodge Apparel! GO BLUE!</div>
             <Link to='/catalog'><img id='stadium' src={stadium} alt='michstad' width='900' height='600' /></Link>
         </div>
     );

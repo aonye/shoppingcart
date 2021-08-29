@@ -97,10 +97,10 @@ nav {
 
 .reddot{
     background-color: rgb(241, 34, 34);
-    border: 0.075vw solid black;
+    border: 0.05vw solid gray;
     border-radius: 100vw;
-    height: 0.75vw;
-    width: 0.75vw;
+    height: 0.8vw;
+    width: 0.8vw;
     position: absolute;
     top: 1.325vw;
     left: 0.125vw;
@@ -133,9 +133,9 @@ nav {
 #stadium{
 }
 
-img{
+/* img{
     cursor: pointer;
-}
+} */
 
 /* footer{ 
     display: flex;
@@ -156,18 +156,32 @@ img{
 
 a{
     width: max-content;
+    color: inherit;
 }
 
-a:visited, a:hover, a:active{
+a, a:visited, a:hover, a:active{
     color: inherit;
 }
 
 
-
-.shopContainer{
-
+/* Individual Product Page */
+.productPageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 25vw;
+    color: black;
+    margin: 5vw 0 0 5vw;
 }
 
+.productPageContainer img{
+    width: 20vw;
+    height: 20vw;
+}
+
+/* */
 .catalogmenu{
     display: flex;
     flex-direction: column;
@@ -223,6 +237,30 @@ label.underline{
     margin-top: 5%;
 }
 
+.productImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1vw;
+    width: 28vw;
+    height: 28vw;
+    background-color: rgb(2, 2, 58);
+    border-radius: 0.5vw;
+    margin: 0 0.5vw 0.5vw 0;
+    color: white;
+}
+
+.productImg img{
+    width: 20vw;
+    height: 20vw;
+    transition: width 0.5s, height 0.5s;
+}
+
+.productImg img:hover{
+    width: 22vw;
+    height: 22vw;
+}
+
 .imageContainer {
     display: flex;
     flex-direction: row !important;
@@ -260,8 +298,7 @@ html, body {
 }
 
 .blur {
-    background-color: rgb(235, 235, 235);
-    border: 0.1vw solid gray;
+    border: 0.2vw solid gray;
     border-radius: 0.2vw;
 }
 
@@ -269,6 +306,72 @@ html, body {
     cursor: pointer;
     background-color: rgb(180, 180, 180);
 }
+
+
+
+
+
+/* Cart */
+
+.cartMainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartTitle {
+    font-size: 1.5vw;
+    margin-top: 2vw;
+}
+
+.cartContents{
+    display: flex;
+    flex-flow: row wrap !important;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%
+}
+
+.cartImgCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: navy;
+    color: white;
+    font-size: 1.25vw;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 1vw;
+}
+
+.cartImgCont img{
+    width: 20vw;
+    height: 20vw;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .dropbtn {

@@ -22,8 +22,11 @@ const createCatalog = (arr) => {
 const createImages = (prodType, array) => {
     return array.map((item) => {
         return (
-            <Link key={item.id} to={`/catalog/${prodType}/${item.id}`}>
-                <img className='images' src={item.image} alt='' />
+            <Link key={item.id} to={`/shoppingcart/catalog/${prodType}/${item.id}`}>
+                <div className='productImg'>
+                    <img className='images' src={item.image} alt='' />
+                    <div>{item.name}</div>
+                </div>
             </Link>
         );
     });

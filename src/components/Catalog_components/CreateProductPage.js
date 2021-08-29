@@ -19,9 +19,10 @@ const createComponent = (elem, routeName, clickHand) => {
     return (
         <div className='catalog'>
             {createMenu()}
-            <div className='shopContainer' id={`${routeName + elem.id}`}>
+            <div className='productPageContainer' id={`${routeName + elem.id}`}>
                 <img src={elem.image} alt='' />
-                <div>{elem.description}</div>
+                <div>{`${elem.description}`}</div>
+                <div>{`Unit Price: ${elem.price}`}</div>
                 <button onClick={(e) => clickHand(e, elem)}>Add to Cart</button>
             </div>
         </div>

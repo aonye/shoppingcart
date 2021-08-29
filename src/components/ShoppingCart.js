@@ -3,10 +3,16 @@ import React from 'react';
 const ShoppingCart = (props) => {
     const images = displayImages(props.cart, props.delItem, props.editItem);
     return (
-        <div>
-            <div>Shopping Cart</div>
-            {images}
-            {images.length !== 0 ? <div>{`Grand Total: ${(calcTotal(props.cart)).toFixed(2)}`}</div> : null}
+        <div className='cartMainContainer'>
+            <h1 className='cartTitle'>Shopping Cart</h1>
+            <div>Edit items by clicking on quantity</div>
+            <div className='cartContents'>
+                {images}
+            </div>
+            <div className='checkout'>
+                {images.length !== 0 ? <h3>{`Grand Total: ${(calcTotal(props.cart)).toFixed(2)}`}</h3> : null}
+                <button>Checkout</button>
+            </div>
         </div>
     );
 };
@@ -16,7 +22,7 @@ const displayImages = (obj, delItemClickHand, editItemClickHand) => {
     for (let objKey in obj) {
         const tempArr = obj[objKey].map((item) => {
             return (
-                <div className='shoppingcart' key={item.id} id={`${objKey + item.id}`} >
+                <div className='cartImgCont' key={item.id} id={`${objKey + item.id}`} >
                     <img src={item.image} alt='' />
                     <div>
                         <div style={{ display: 'inline-block' }}>{`Quantity: x`}</div>

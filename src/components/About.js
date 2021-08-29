@@ -3,7 +3,7 @@ import { SMIcons } from "../images/Icons";
 const About = () => {
     return (
         <div className='about'>
-            <div>Check out our social media pages!!</div>
+            <div>Check out our social media!</div>
             <div>
                 {makeIcons(SMIcons)}
             </div>

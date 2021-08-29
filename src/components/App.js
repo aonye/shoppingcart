@@ -62,12 +62,12 @@ const App = () => {
     <BrowserRouter>
       <Nav cart={cart} />
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/shoppingcart'
+        <Route exact path='/shoppingcart' component={Home} />
+        <Route exact path='/shoppingcart/about' component={About} />
+        <Route exact path='/shoppingcart/cart'
           render={() => <ShoppingCart cart={cart} delItem={delItemClickHand} editItem={editItemClickHand} />} />
         <Route
-          path='/catalog'
+          path='/shoppingcart/catalog'
           render={({ match: { path } }) => (
             <>
               <Route path={`${path}/`} component={Catalog} exact />
@@ -111,7 +111,6 @@ const App = () => {
           )}
         />
       </Switch>
-      <Footer />
     </BrowserRouter>
   );
 };
