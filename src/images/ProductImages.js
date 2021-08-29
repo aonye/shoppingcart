@@ -10,35 +10,34 @@ import NavyPOBasic from './products/navy-pullover-basic.jpeg';
 import NikeMaizeShirt from './products/nike-maize-shirt.jpeg';
 import WhitePOBasic from './products/white-pullover-basic.jpeg';
 
-const shirts = [
+const Shirts = [
     { id: 0, name: 'NikeMaizeShirt', image: NikeMaizeShirt },
     { id: 1, name: 'JordanLS', image: JordanLS },
 ];
 
-const sweatshirts = [
+const Sweatshirts = [
     { id: 0, name: 'MaizeFBSS', image: MaizeFBSS },
     { id: 1, name: 'NavyFBSS', image: NavyFBSS },
     { id: 2, name: 'NavyPOBasic', image: NavyPOBasic },
     { id: 3, name: 'WhitePOBasic', image: WhitePOBasic },
     { id: 4, name: 'GrayPO', image: GrayPO },
-    { id: 5, name: 'NikeMaizeShirt', image: NikeMaizeShirt },
 ];
 
-const sweatpants = [
+const Sweatpants = [
     { id: 0, name: 'ChampGraySP', image: ChampGraySP },
     { id: 1, name: 'ChampNavySP', image: ChampNavySP },
 ];
 
-const accessories = [
+const Accessories = [
     { id: 0, name: 'NavyHat', image: NavyHat },
     { id: 1, name: 'Scarf', image: Scarf },
 ];
 
 const Products = [
-    { ProductType: 'Shirts', ProductInfo: shirts },
-    { ProductType: 'Sweatshirts', ProductInfo: sweatshirts },
-    { ProductType: 'Sweatpants', ProductInfo: sweatpants },
-    { ProductType: 'Accessories', ProductInfo: accessories },
+    { ProductType: 'Shirts', ProductInfo: Shirts },
+    { ProductType: 'Sweatshirts', ProductInfo: Sweatshirts },
+    { ProductType: 'Sweatpants', ProductInfo: Sweatpants },
+    { ProductType: 'Accessories', ProductInfo: Accessories },
 ]
 
-export { Products }; //all exports are objs in arr
+export { Products, Shirts, Sweatshirts, Sweatpants, Accessories }; //all exports are objs in arr

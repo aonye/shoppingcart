@@ -1,47 +1,73 @@
+import React, { useState } from 'react';
+import _ from 'lodash';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { capitalize } from './HelperFunctions';
-import { Products } from '../images/ProductImages';
+import { removeFromArr, updateArrContent, getNthParent } from './HelperFunctions';
+import createRoute from './Catalog_components/CreateProductPage';
+import { ShirtIndex, SSIndex, SPIndex, AccessIndex } from './ProductIndex';
 import { default as Components } from './Index';
-import { default as CatalogItems } from './Catalog_components/Catalog_items/index';
-import Shirt0 from './Catalog_components/Catalog_items/Shirt0';
 import '../styles/Styles.css';
 
-// const [shirts, sweatshirts, sweatpants, accessories] = products;
-// const shirtIDs = shirts.imgArr.map((item) => item.id);
-// const sweatShirtIDs = sweatshirts.imgArr.map((item) => item.id);
-// const sweatPantIDs = sweatpants.imgArr.map((item) => item.id);
-// const accessoryIDs = accessories.imgArr.map((item) => item.id);
-
 const App = () => {
-  const { Nav, Footer, Home, About, Catalog, Shirts, Sweatshirts, Sweatpants, Accessories } = Components;
+  const { Nav, Footer, Home, About, Catalog, Shirts, Sweatshirts, Sweatpants, Accessories, ShoppingCart } = Components;
 
-  const createR = (Products, path) => {
-    const regex = '(?<=\/catalog\/)[A-Za-z]+';
-    const [routeName] = path.match(regex);
-    const product = Products.find((item) => {
-      return item.ProductType === capitalize(routeName);
+  const [cart, setCart] = useState({
+    shirts: [],
+    sweatshirts: [],
+    sweatpants: [],
+    accessories: [],
+  });
+
+  const cartClickHand = (event, obj) => {
+    const [key, id] = event.target.parentNode.id.split(/([0-9]+)/);
+    const currentCart = _.cloneDeep(cart); //deep clone the state object
+    const prodArr = currentCart[key]; //get product type's array of products
+    const prodObj = prodArr.find((item) => { //find the specific product based on ID, return product's object
+      return item.id === parseInt(id);
     });
-    return product.ProductInfo.map((element) => {
-      console.log(`${path}/${element.id}`, createComponent(element.image));
-      return (
-        <Route key={element.id} path={`${path}/${element.id}`} render={() => createComponent(element.image, element.id)} exact />
-      );
-    });
+    if (!prodObj) { //if product is not in cart, add it by cloning default obj and init count
+      setCart({ ...cart, [key]: [...prodArr, { ...obj, count: 1 }] });
+    } else {
+      prodObj.count = prodObj.count + 1; //add another item
+      //console.log('madeitinhere', cart);
+      setCart({ ...currentCart });
+    }
+  };
+
+  const delItemClickHand = (event) => {
+    const fullID = event.target.parentNode.id.split(/([0-9]+)/);
+    const [key, childIDNum] = fullID;
+    const currentCart = _.cloneDeep(cart);
+    const prodArr = currentCart[key];
+    removeFromArr(prodArr, parseInt(childIDNum));
+    setCart({ ...cart, [key]: prodArr });
   }
 
-  const createComponent = (image, id) => {
-    return (
-      <img key={id} src={image} alt='' />
-    );
-  }
+  const editItemClickHand = (event) => {
+    const inputCount = event.target.textContent;
+    console.log('made it -- edit item');
+    //eslint-disable-next-line
+    if (inputCount == parseInt(inputCount)) { //int check
+      console.log('passed num equality check');
+      const parentDiv = getNthParent(event.target, 2);
+      const [key, childIDNum] = parentDiv.id.split(/([0-9]+)/);
+      const currentCart = _.cloneDeep(cart);
+      const prodArr = updateArrContent(currentCart[key], parseInt(childIDNum), parseInt(inputCount));
+      setCart({ ...cart, [key]: prodArr });
+    } else {
+      console.log('hello');
+    }
+  };
+
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav cart={cart} />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/shoppingcart'
+          render={() => <ShoppingCart cart={cart} delItem={delItemClickHand} editItem={editItemClickHand} />} />
         <Route
-          path="/catalog"
+          path='/catalog'
           render={({ match: { path } }) => (
             <>
               <Route path={`${path}/`} component={Catalog} exact />
@@ -50,7 +76,7 @@ const App = () => {
                 render={({ match: { path } }) => (
                   <>
                     <Route path={`${path}/`} component={Shirts} exact />
-                    {createR(Products, path)}
+                    {createRoute(ShirtIndex, path, cartClickHand)}
                   </>
                 )}
               />
@@ -59,7 +85,7 @@ const App = () => {
                 render={({ match: { path } }) => (
                   <>
                     <Route path={`${path}/`} component={Sweatshirts} exact />
-                    {createR(Products, path)}
+                    {createRoute(SSIndex, path, cartClickHand)}
                   </>
                 )}
               />
@@ -68,7 +94,7 @@ const App = () => {
                 render={({ match: { path } }) => (
                   <>
                     <Route path={`${path}/`} component={Sweatpants} exact />
-                    {createR(Products, path)}
+                    {createRoute(SPIndex, path, cartClickHand)}
                   </>
                 )}
               />
@@ -77,7 +103,7 @@ const App = () => {
                 render={({ match: { path } }) => (
                   <>
                     <Route path={`${path}/`} component={Accessories} exact />
-                    {createR(Products, path)}
+                    {createRoute(AccessIndex, path, cartClickHand)}
                   </>
                 )}
               />

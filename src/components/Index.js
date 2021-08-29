@@ -5,6 +5,7 @@ import Shirts from './Catalog_components/Shirts';
 import Sweatshirts from './Catalog_components/Sweatshirts';
 import Sweatpants from './Catalog_components/Sweatpants';
 import Accessories from './Catalog_components/Accessories';
+import ShoppingCart from './ShoppingCart';
 import About from './About';
 import Footer from './Footer';
 
@@ -18,6 +19,7 @@ const Index = {
     Sweatshirts,
     Sweatpants,
     Accessories,
+    ShoppingCart,
 }
 
 export default Index;

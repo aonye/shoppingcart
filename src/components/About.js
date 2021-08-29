@@ -11,15 +11,17 @@ const About = () => {
     );
 };
 
-const makeIcons = (arr) => {
-    return arr.map((item, index) => {
-        let link = 'https://github.com/aonye';
-        return (
-            <a key={index} href={link}>
-                <img className='SMImg' src={item} alt='' />
+const makeIcons = (obj) => {
+    let arr = [];
+    const link = 'https://github.com/aonye';
+    for (let k in obj) {
+        arr.push(
+            <a key={k} href={link}>
+                <img className='SMImg' src={obj[k]} alt='' />
             </a>
         );
-    });
+    }
+    return arr.map(i => i);
 }
 
 export default About;

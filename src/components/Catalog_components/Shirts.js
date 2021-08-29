@@ -6,6 +6,7 @@ import createCatalog from './CreateCatalog';
 const shirtProd = [Products.find((item) => item.ProductType === 'Shirts')];
 
 const Shirts = ({ match }) => {
+    console.log(shirtProd);
     return (
         <div className='catalog'>
             {createMenu()}
