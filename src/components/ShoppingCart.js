@@ -5,14 +5,20 @@ const ShoppingCart = (props) => {
     return (
         <div className='cartMainContainer'>
             <h1 className='cartTitle'>Shopping Cart</h1>
-            <div>Edit items by clicking on quantity</div>
+            {images.length !== 0 ? <div>Edit items by clicking on quantity</div> : <div>Cart is currently empty</div>}
             <div className='cartContents'>
                 {images}
             </div>
-            <div className='checkout'>
-                {images.length !== 0 ? <h3>{`Grand Total: ${(calcTotal(props.cart)).toFixed(2)}`}</h3> : null}
-                <button>Checkout</button>
-            </div>
+            {images.length !== 0 ? checkOutComponent(props) : null}
+        </div>
+    );
+};
+
+const checkOutComponent = (props) => {
+    return (
+        <div className='checkout'>
+            <h3>{`Grand Total: ${(calcTotal(props.cart)).toFixed(2)}`}</h3>
+            <button>Checkout</button>
         </div>
     );
 };

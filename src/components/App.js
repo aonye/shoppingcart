@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { removeFromArr, updateArrContent, getNthParent } from './HelperFunctions';
@@ -16,6 +16,10 @@ const App = () => {
     sweatpants: [],
     accessories: [],
   });
+
+  useEffect(() => {
+    document.title = "MLodge Apparel"
+  }, []);
 
   const cartClickHand = (event, obj) => {
     const [key, id] = event.target.parentNode.id.split(/([0-9]+)/);
